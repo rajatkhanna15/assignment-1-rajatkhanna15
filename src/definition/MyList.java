@@ -202,12 +202,9 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
-     * This method will return data of the node at a particular index
-     *
-     * @param index The index of the node of which we have to get the data
-     * @return data of the node
-     */
+    /*
+      This method will return data of the node at a particular index
+    */
     @Override
     public E getData(int index) {
         /*
