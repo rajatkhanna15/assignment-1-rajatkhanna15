@@ -90,11 +90,8 @@ public class MyList<E> implements MyListAdt<E> {
         size++;
     }
 
-    /**
-     * This method will add a new node with a data item passed and after a specified node
-     *
-     * @param item      Data item of the  new node that is to be added
-     * @param afterNode the node after which the new node is to be added
+    /*
+    This method will add a new node with a data item passed and after a specified node
      */
     private void addAfter(E item, Node<E> afterNode) {
         /*
