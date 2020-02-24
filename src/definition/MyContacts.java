@@ -207,5 +207,22 @@ public class MyContacts implements MyContactsADT {
         }
     }
 
+    /*
+     helper method for deleteContact() method and will print the names with the index number (starting from 1) in front of it
+     */
+    private void printNames() {
+        /*
+        getting the first and last name of the contact by traversing(one by one)
+         */
+        System.out.println("Here are your all contacts:");
+        for (int i = 0; i < myContacts.size; i++) {
+            Person temp = myContacts.getData(i);
+            /*
+            Printing the names
+             */
+            System.out.println((i + 1) + "." + temp.getFirstName() + " " + temp.getLastName());
+        }
+    }
+
 
 }
