@@ -233,13 +233,13 @@ public class MyContacts implements MyContactsADT {
          */
         MyList<Integer> indexes = new MyList<>();
         /*
-        if myContactBook is empty do nothing
+        if myContacts is empty do nothing
          */
         if (myContacts.size == 0) {
             System.out.println("There are No contacts saved please add some");
         }
         /*
-        Traversing myContactBook to match with the firstName
+        Traversing myContacts to match with the firstName
          */
         else {
             for (int i = 0; i < myContacts.size; i++) {
