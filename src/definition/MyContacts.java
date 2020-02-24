@@ -153,7 +153,7 @@ public class MyContacts implements MyContactsADT {
 
     }
 
-    /**
+    /*
      * This Method allows you to search contact by their FirstName
      */
     @Override
@@ -222,6 +222,54 @@ public class MyContacts implements MyContactsADT {
              */
             System.out.println((i + 1) + "." + temp.getFirstName() + " " + temp.getLastName());
         }
+    }
+
+    /* helper method for searchContact() method it match the firstName passed with every contact present in the list
+       and return a list of such indexes where the name is matched
+     */
+    private MyList<Integer> matchFirst(String firstName) {
+        /*
+        Creating a new List to store the  matched indexes
+         */
+        MyList<Integer> indexes = new MyList<>();
+        /*
+        if myContactBook is empty do nothing
+         */
+        if (myContacts.size == 0) {
+            System.out.println("There are No contacts saved please add some");
+        }
+        /*
+        Traversing myContactBook to match with the firstName
+         */
+        else {
+            for (int i = 0; i < myContacts.size; i++) {
+                /*
+                First get the contact in a Person type variable
+                 */
+                Person temp = myContacts.getData(i);
+                /*
+                Then get the FirstName of that contact
+                 */
+                String name = temp.getFirstName();
+                /*
+                Converting both the passed name and ContactName to lowercase to achieve case Insensitivity
+                 */
+                name = name.toLowerCase();
+                firstName = firstName.toLowerCase();
+                /*
+                if both the names found same add the index to the list
+                 */
+
+                if (name.compareTo(firstName) == 0) {
+                    indexes.add(i);
+                }
+
+            }
+        }
+        /*
+        return the list
+         */
+        return indexes;
     }
 
 
