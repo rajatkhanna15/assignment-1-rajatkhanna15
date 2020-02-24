@@ -103,10 +103,8 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
-     * This method will add a node to the last of the list
-     *
-     * @param item The data item to be added
+    /*
+      This method will add a node to the last of the list.
      */
     @Override
     public void add(E item) {
@@ -117,7 +115,7 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
+    /*
      * This method will remove the first node from the list and return the data of that node
      */
     private void removeFirst() {
