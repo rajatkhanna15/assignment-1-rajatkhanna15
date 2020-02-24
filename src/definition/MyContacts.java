@@ -76,8 +76,23 @@ public class MyContacts implements MyContactsADT {
 
     }
 
+    /*
+    this method will print all the contacts in the user's contact list.
+     */
+
     @Override
     public void viewContact() {
+        System.out.println("---Here are all your contacts---\n" +
+                "-------- * -------- * -------- * --------");
+
+        /*
+        printing all the contacts one by one with the help of traversing.
+         */
+        for (int i = 0; i < myContacts.size; i++) {
+            Person response = myContacts.getData(i);
+            System.out.println(response);
+
+        }
 
     }
 
