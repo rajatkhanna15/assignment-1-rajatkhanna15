@@ -26,6 +26,13 @@ public interface MyListAdt<E> {
      */
     void remove(int index);
 
+
+    /*
+    this method will store the data of the node present at the index entered by the user.
+
+
+     */
+
     E getData(int index);
 
 
