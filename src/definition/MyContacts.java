@@ -21,7 +21,7 @@ public class MyContacts implements MyContactsADT {
     /*
     A list of string type to store contact number of an individual to add in the list.
      */
-    MyList<String> myContactNumbers = new MyList<>;
+
 
 
     /*
@@ -47,7 +47,7 @@ public class MyContacts implements MyContactsADT {
         /*
         call the getContactNumbers() method to store the contact numbers of the contact.
          */
-        contactNumbers = getContactNumbers();
+        MyList<String> contactNumbers = getContactNumbers();
 
         /*
         call the getEmail() method to store the email of the contact.
@@ -273,10 +273,62 @@ public class MyContacts implements MyContactsADT {
         return indexes;
     }
 
-    /*A helper method of addContact() method
-      use to input firstName of the Contact
-
+    /*
+     * This is a helper method for addContact() method
+     * it helps in comparing the firstName of a contact and return a single index
+     * of the contact that is found Lexicographically  equal or greater
+     *
+     *  FirstName the name to be compared
+     * return index of the contact equal or greater Lexicographically
      */
+    private int compareFirstName(String FirstName) {
+        int index = 0;
+        /*
+        If there is no contact do nothing and return the first index as no sorting is required
+         */
+        if (myContacts.size == 0) {
+            return index;
+        }
+        /*
+            Traversing myContactBook to compare everyName
+         */
+        else {
+            for (int i = 0; i < myContacts.size; i++) {
+                 /*
+                First get the contact in a Person type variable
+                 */
+                Person temp = myContacts.getData(i);
+                /*
+                Then get the FirstName of that contact
+                 */
+                String name = temp.getFirstName();
+                 /*
+                Converting both the passed name and ContactName to lowercase to achieve case Insensitivity
+                 */
+                name = name.toLowerCase();
+                FirstName = FirstName.toLowerCase();
+                /*
+                If passed name is smaller increase the value of index by 1
+                 */
+                if (name.compareTo(FirstName) < 0) {
+                    index++;
+                }
+                /*
+                if the name found equal or greater break the loop and return the index
+                 */
+                else if (name.compareTo(FirstName) == 0) {
+                    break;
+                } else {
+                    break;
+                }
+
+            }
+
+        }
+        return index;
+    }
+
+
     private String getFirstName() {
         System.out.println("Please Enter the name of the Person");
         System.out.print("FirstName: ");
@@ -381,14 +433,14 @@ public class MyContacts implements MyContactsADT {
 
     }
 
-    /**
+    /*
      * A helper method of addContact() method
      * use to input email of the Contact
      * gives the choice if user want to add a email or not
      * there can only be a single email for a individual contact
      * if user dont want to add a email return null
      *
-     * @return email of the new contact
+     * return email of the new contact
      */
 
 
@@ -433,4 +485,4 @@ public class MyContacts implements MyContactsADT {
 }
 
 
-}
+
