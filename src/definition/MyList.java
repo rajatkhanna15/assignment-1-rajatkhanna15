@@ -75,10 +75,8 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
-     * This method will add a node with data passed to the starting of the list
-     *
-     * @param item data to be added
+    /*
+    this method will add a node at starting of linkedlist.
      */
     private void addFirst(E item) {
         /*
