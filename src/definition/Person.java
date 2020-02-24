@@ -102,6 +102,7 @@ public class Person {
 
     @Override
     public String toString() {
+
         return "First Name: " + getFirstName() + "\n" + "Last Name:" + getLastName() + "\n" + getContactNumbers() + "\n" + "Email address:" + getEmail() + "\n" + "-------- * -------- * -------- * --------\n" +
                 "-------- * -------- * -------- * --------";
     }
