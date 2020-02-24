@@ -272,5 +272,29 @@ public class MyContacts implements MyContactsADT {
         return indexes;
     }
 
+    /*A helper method of addContact() method
+      use to input firstName of the Contact
+
+     */
+    private String getFirstName() {
+        System.out.println("Please Enter the name of the Person");
+        System.out.print("FirstName: ");
+        return scanner.next();
+
+    }
+
+    /**
+     * A helper method of addContact() method
+     * use to input LastName of the Contact
+     *
+     * @return LastName of the new contact
+     */
+
+    private String getLastName() {
+        System.out.print("LastName: ");
+        return sc.next();
+
+    }
+
 
 }
