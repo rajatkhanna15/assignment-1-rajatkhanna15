@@ -91,15 +91,12 @@ public class Person {
         else if (contactNumbers.size == 1) {
             a = true;
         }
-        /*
-          if a found true return "Contact Number: " + StringBuilder
-          otherwise return  "Contact Numbers: " + StringBuilder
-         */
+
 
         return a ? "Contact Number: " + contacts : "Contact Numbers:" + contacts;
     }
 
-    /**
+    /*
      * overridden toString() method to print the contact according to requirement
      */
 
