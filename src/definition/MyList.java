@@ -213,7 +213,7 @@ public class MyList<E> implements MyListAdt<E> {
         return getNode(index).getData();
     }
 
-    /**
+    /*
      * A private static class that will represent a single element of our list
      * this class has a data value  and a reference value
      */
@@ -221,7 +221,7 @@ public class MyList<E> implements MyListAdt<E> {
         private E data;
         private Node<E> next;
 
-        /**
+        /*
          * Constructor to initialize the data and next fields of the node class
          *
          * @param data data of the node
@@ -233,7 +233,7 @@ public class MyList<E> implements MyListAdt<E> {
             this.next = next;
         }
 
-        /**
+        /*
          * Getter method of the data field
          *
          * @return data of the node
@@ -243,7 +243,7 @@ public class MyList<E> implements MyListAdt<E> {
             return data;
         }
 
-        /**
+        /*
          * Getter method of the next field
          *
          * @return reference of the node
