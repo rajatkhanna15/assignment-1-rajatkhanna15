@@ -283,16 +283,15 @@ public class MyContacts implements MyContactsADT {
 
     }
 
-    /**
-     * A helper method of addContact() method
+    /*
+      A helper method of addContact() method
      * use to input LastName of the Contact
-     *
-     * @return LastName of the new contact
+
      */
 
     private String getLastName() {
         System.out.print("LastName: ");
-        return sc.next();
+        return scanner.next();
 
     }
 
