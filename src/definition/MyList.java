@@ -150,10 +150,8 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
-     * This method will remove a node after a specified node and will return data of that node
-     *
-     * @param afterNode the node after of which the node is to be remove
+    /*
+      This method will remove a node after a specified node and will return data of that node
      */
     private void removeAfter(Node<E> afterNode) {
         /*
