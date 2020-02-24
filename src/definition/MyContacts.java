@@ -396,7 +396,7 @@ public class MyContacts implements MyContactsADT {
         String Email = null;
         System.out.print("Do You Want to add an email ? (y/n) :");
         while (true) {
-            String a = sc.next();
+            String a = scanner.next();
             a = a.toLowerCase();
             /*
             Checking if the entered input is a single character or not
@@ -412,7 +412,7 @@ public class MyContacts implements MyContactsADT {
              */
             if (at == 'y') {
                 System.out.print("Email Address: ");
-                Email = sc.next();
+                Email = scanner.next();
                 break;
             }
              /*
