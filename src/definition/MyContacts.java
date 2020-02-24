@@ -4,6 +4,7 @@ import adt.MyContactsADT;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /*
 This class is the definition class where the various methods are implemented from the MyListAdt.
@@ -294,6 +295,142 @@ public class MyContacts implements MyContactsADT {
         return scanner.next();
 
     }
+
+
+    /* A helper method of addContact() method
+     * use to input contactNumbers of the Contact
+     * Ensures that there must be AtLeast 1 contact for every individual contact
+
+     */
+
+    private MyList<String> getContactNumbers() {
+        /*
+        Declaration of a new list to store ContactNumbers of the new Contact
+         */
+        MyList<String> contactNumbers = new MyList<>();
+        /*
+        A String Variable to store an individual Contact of the new Contact
+         */
+        String contactNo;
+        while (true) {
+            System.out.print("ContactNumber: ");
+            contactNo = scanner.next();
+             /*
+             If entered number is valid add contactNo to the list
+              */
+            if (Pattern.matches("[0-9]+", contactNo)) {
+                contactNumbers.add(contactNo);
+                break;
+            }
+            /*
+            if entered number is not valid i.e, contains characters except digits
+             */
+            else {
+                System.out.println("Invalid PhoneNumber");
+            }
+        }
+        while (true) {
+            /*
+            Asking again for a contactNumber if user  want to add
+             */
+            System.out.print("Do You Want to add a new ContactNumber? (y/n) :");
+            String a = scanner.next();
+            a = a.toLowerCase();
+            /*
+            Checking if the entered input is a single character or not
+            if not printing Invalid input message
+             */
+            char at = a.charAt(0);
+            if (a.length() > 1) {
+                System.out.println("Please Enter a Valid Input i.e., y for Yes or n for No");
+                continue;
+            }
+            /*
+            if entered input means yes allow to add a new contact and add that contact also to the list of ContactNumbers
+             */
+
+            if (at == 'y') {
+                System.out.print("ContactNumber: ");
+                contactNo = scanner.next();
+                /*
+                checking a valid contact number
+                 */
+                if (Pattern.matches("[0-9]+", contactNo)) {
+
+                    contactNumbers.add(contactNo);
+                } else {
+                    System.out.println("Invalid PhoneNumber");
+                }
+            }
+            /*
+            if the entered input means no end the loop and return the contactNumbers list
+             */
+            else if (at == 'n') {
+                break;
+            }
+            /*
+            If there is some invalid input other than 'y' or 'n' then print Invalid input message
+             */
+            else {
+                System.out.println("Please Enter a Valid Input i.e., y for Yes or n for No");
+            }
+        }
+
+        return contactNumbers;
+
+
+    }
+
+    /**
+     * A helper method of addContact() method
+     * use to input email of the Contact
+     * gives the choice if user want to add a email or not
+     * there can only be a single email for a individual contact
+     * if user dont want to add a email return null
+     *
+     * @return email of the new contact
+     */
+
+
+    private String getEmail() {
+        String Email = null;
+        System.out.print("Do You Want to add an email ? (y/n) :");
+        while (true) {
+            String a = sc.next();
+            a = a.toLowerCase();
+            /*
+            Checking if the entered input is a single character or not
+            if not printing Invalid input message
+             */
+            char at = a.charAt(0);
+            if (a.length() > 1) {
+                System.out.println("Please Enter a Valid Input i.e., y for Yes or n No");
+                continue;
+            }
+            /*
+            if entered input means yes allow to add a new email
+             */
+            if (at == 'y') {
+                System.out.print("Email Address: ");
+                Email = sc.next();
+                break;
+            }
+             /*
+            if the entered input means no end the loop
+             */
+            else if (at == 'n') {
+                break;
+            }
+             /*
+            If there is some invalid input other than 'y' or 'n' then print Invalid input message
+             */
+            else {
+                System.out.println("Please Enter a Valid Input i.e., y for Yes or n for No");
+            }
+        }
+        return Email;
+    }
+}
 
 
 }
