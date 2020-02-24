@@ -2,6 +2,7 @@ package definition;
 
 import adt.MyContactsADT;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -96,10 +97,62 @@ public class MyContacts implements MyContactsADT {
 
     }
 
+    /*
+    this method will first print the name of all the contacts with a specified number(starting from 1)
+    and then delete the specified contact by the specified nummber.
+     */
+
     @Override
     public void deleteContact() {
+        Scanner scanner = new Scanner(System.in);
+
+        /*
+        calling the printNames() method to print all the contact names.
+         */
+        printNames();
+
+        /*
+        number to delete a contact to be entered.
+         */
+
+        System.out.println("Enter the number against the contact to delete it:");
+        try {
+            int index = scanner.nextInt();
+
+            /*
+            if the index is 0 or greater than the size than print invalid message.
+             */
+            if (index > myContacts.size || index == 0)
+                System.out.println("INVALID MESSAGE");
+            else {
+                /*
+                get the data of the contact and storing in person type variable
+                 */
+                Person p1 = myContacts.getData(index - 1);
+
+                /*
+                Getting the first and last name of the contact.
+                 */
+                String name = p1.getFirstName() + " " + p1.getLastName();
+
+                /*
+                Deleting that contact
+                 */
+                myContacts.remove(index - 1);
+
+                /*
+                printing message
+                 */
+                System.out.println(name + "contact deleted from list!");
+
+            }
+
+        } catch (InputMismatchException E) {
+            System.out.println("Integer input to be entered");
+        }
 
     }
+
 
     @Override
     public void searchContact() {
