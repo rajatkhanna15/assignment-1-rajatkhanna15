@@ -10,7 +10,7 @@ public class Main {
         MyContacts user = new MyContacts();
         boolean response = true;
         do {
-            System.out.println("Welcome to Saurabh's Contact List App\n" +
+            System.out.println("Welcome to Rajat's Contact List App\n" +
                     "Press 1 to add a new contact\n" +
                     "Press 2 to view all contacts\n" +
                     "Press 3 to search for a contact\n" +
