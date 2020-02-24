@@ -21,6 +21,8 @@ public interface MyListAdt<E> {
 
     /*
     this method will remove a data item from a specified index.
+
+
      */
     void remove(int index);
 
