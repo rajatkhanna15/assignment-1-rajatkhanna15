@@ -49,15 +49,13 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
-     * @param item  data to be added
-     * @param index index at which data is to be added
-     *              This Method add a Node in the list with data item at a specified index
+    /*
+      This Method add a Node in the list with data item at a specified index
      */
     public void add(E item, int index) {
         /*
          *index cannot be less then 0 and more than size of th link list
-         * if such index passed throw a Exception
+         * if such index passed throw an IndexOutOfBoundsException( Exception
          */
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException(Integer.toString(index));
