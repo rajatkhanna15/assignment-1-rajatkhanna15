@@ -27,14 +27,14 @@ public class Person {
     }
 
 
-    /**
+    /*
      * Getter method of the firstName
      */
     public String getFirstName() {
         return firstName;
     }
 
-    /**
+    /*
      * Getter method of the lastName
      */
 
@@ -42,7 +42,7 @@ public class Person {
         return lastName;
     }
 
-    /**
+    /*
      * Getter method of the email
      */
 
@@ -50,10 +50,9 @@ public class Person {
         return email;
     }
 
-    /**
+    /*
      * Getter method of contactNumbers as required
-     *
-     * @return String of all Contact Numbers
+
      */
 
     public String getContactNumbers() {
