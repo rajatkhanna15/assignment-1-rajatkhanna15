@@ -153,10 +153,58 @@ public class MyContacts implements MyContactsADT {
 
     }
 
-
+    /**
+     * This Method allows you to search contact by their FirstName
+     */
     @Override
     public void searchContact() {
+        /*
+        Taking input of user
+         */
+        int size;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("You could search for a contact from their first names:");
+        String name = sc.next();
+        /*
+        removing space from the input given by the user if present
+         */
+        name = name.trim();
+        /*
+        calling the matchFirst() method and storing the list of returned indexes in a indexesList field
+         */
+        MyList<Integer> indexesList = matchFirst(name);
+        /*
+        initialization of a boolean variable for ternary operation
+         */
+        boolean a = false;
+        /*
+        get the size of indexesList field in the size variable
+         */
+        size = indexesList.size;
+        if (size > 1) {
+            /*;
+            if only 1 match found i.e, the size of the list is 1 then make a =true
+             */
+            a = true;
+        }
+        /*
+        Check if No result found
+         */
+        if (size == 0) {
+            System.out.println("NO RESULTS FOUND");
+        } else
+        /*
+        Print the number of matches Found
+         */
 
+            System.out.println(a ? size + " Matches found!" : size + " Match found!");
+        /*
+        Print every matched contact by the indexes in the indexesList
+         */
+        for (int i = 0; i < size; i++) {
+            int index = indexesList.getData(i);
+            System.out.println(myContacts.getData(index));
+        }
     }
 
 
