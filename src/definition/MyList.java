@@ -174,10 +174,8 @@ public class MyList<E> implements MyListAdt<E> {
 
     }
 
-    /**
-     * This method will remove a node at a specified index
-     *
-     * @param index the value of index
+    /*
+     * This method will remove a node at a specified index.
      */
     @Override
     public void remove(int index) {
